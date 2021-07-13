@@ -1,0 +1,14 @@
+### IntelliJ template
+.idea/
+*.iml
+!.idea/saveactions_settings.xml
+!.idea/codeStyles/IntelliJ_CodeStyle.xml
+
+projectName.iml
+/*.classpath
+/.classpath
+/.springBeans
+*.DS_Store
+/build
+/local.properties
+target/
