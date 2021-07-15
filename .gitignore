@@ -2,7 +2,7 @@
 .idea/
 *.iml
 !.idea/saveactions_settings.xml
-!.idea/codeStyles/IntelliJ_CodeStyle.xml
+!.idea/codeStyles/Project.xml
 
 projectName.iml
 /*.classpath
