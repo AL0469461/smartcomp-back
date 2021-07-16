@@ -1,0 +1,19 @@
+version: '3'
+services:
+  smartcomp_db:
+    image: mcr.microsoft.com/mssql/server:2019-CU11-ubuntu-20.04
+    working_dir: /smartcomp-back
+    volumes:
+      - .:/app
+      - db_mssql:/var/opt/mssql
+    healthcheck:
+      test: [ "CMD", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 1SmartCompPwd.. -d master -i /app/init_database.sql"]
+    ports:
+      - 1492:1433
+    restart: always
+    environment:
+      SA_PASSWORD:  1SmartCompPwd..
+      ACCEPT_EULA: Y
+      MSSQL_PID: Standard
+volumes:
+  db_mssql: {}
