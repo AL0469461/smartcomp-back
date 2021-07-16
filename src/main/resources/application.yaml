@@ -1,0 +1,10 @@
+version:
+  api: 1.0.0
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;database=smartcomp_db
+    username: SA
+    password: 1SmartCompPwd..
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml

@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - preConditions:
+      - runningAs:
+          username: SA
+      - dbms:
+          type: "mssql"
+
+  - changeSet:
+      id: 1
+      author: vchodaton
+      changes:
+        - createTable:
+            tableName: Employee
+            columns:
+              - column:
+                  name: id
+                  type: varchar(12)
+              - column:
+                  name: name
+                  type: varchar(12)
+              - column:
+                  name: firstname
+                  type: varchar(12)
+              - column:
+                  name: profile
+                  type: varchar(12)
