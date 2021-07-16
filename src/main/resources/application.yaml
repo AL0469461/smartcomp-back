@@ -3,7 +3,7 @@ version:
 
 spring:
   datasource:
-    url: jdbc:sqlserver://localhost:1492;database=smartcomp_db
+    url: jdbc:sqlserver://localhost:1433;database=smartcomp_db
     username: SA
     password: 1SmartCompPwd..
   liquibase:
