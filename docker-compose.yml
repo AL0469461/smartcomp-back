@@ -4,6 +4,7 @@ services:
     image: mcr.microsoft.com/mssql/server:2019-CU11-ubuntu-20.04
     command: /bin/bash ./entrypoint.sh
     volumes:
+      - db_mssql:/var/opt/mssql
       - ./db/mssql/docker-entrypoint.sh:/entrypoint.sh
       - ./db/mssql/docker-db-init.sh:/db-init.sh
       - ./db/mssql/smartcomp-db-init.sql:/db-init.sql
