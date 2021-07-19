@@ -1,21 +1,18 @@
-version: '3'
+version: '3.6'
 services:
   smartcomp_db:
     image: mcr.microsoft.com/mssql/server:2019-CU11-ubuntu-20.04
-    working_dir: /smartcomp-back
+    command: /bin/bash ./entrypoint.sh
     volumes:
-      - .:/app
-      - db_mssql:/var/opt/mssql
-    healthcheck:
-      test: [ "CMD", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 1SmartCompPwd.. -i /app/init_database.sql"]
-      interval: 15s
-      timeout: 3s
+      - ./db/mssql/docker-entrypoint.sh:/entrypoint.sh
+      - ./db/mssql/docker-db-init.sh:/db-init.sh
+      - ./db/mssql/smartcomp-db-init.sql:/db-init.sql
     ports:
       - 1433:1433
     restart: always
     environment:
-      SA_PASSWORD:  1SmartCompPwd..
+      SA_PASSWORD: 1SmartCompPwd..
       ACCEPT_EULA: Y
       MSSQL_PID: Standard
 volumes:
-  db_mssql: {}
+  db_mssql: { }
