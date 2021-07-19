@@ -3,6 +3,7 @@ version:
 
 spring:
   datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     url: jdbc:sqlserver://localhost:1433;database=smartcomp_db
     username: SA
     password: 1SmartCompPwd..
