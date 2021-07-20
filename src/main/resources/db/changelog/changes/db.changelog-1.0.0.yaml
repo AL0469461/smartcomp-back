@@ -3,7 +3,7 @@ databaseChangeLog:
       - runningAs:
           username: SA
       - dbms:
-          type: "mssql"
+          type: "mssql,h2"
 
   - changeSet:
       id: 1
