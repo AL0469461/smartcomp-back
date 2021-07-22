@@ -13,14 +13,29 @@ databaseChangeLog:
             tableName: Employee
             columns:
               - column:
-                  name: id
-                  type: varchar(12)
+                  name: employee_id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
               - column:
-                  name: name
-                  type: varchar(12)
+                  name: GGI
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
               - column:
                   name: firstname
-                  type: varchar(12)
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
               - column:
-                  name: profile
-                  type: varchar(12)
+                  name: lastname
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: hiring_date
+                  type: date
+                  constraints:
+                    nullable: true

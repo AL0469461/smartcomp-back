@@ -1,6 +1,7 @@
 package com.total.smartcomp;
 
-import com.total.smartcomp.model.Employee;
+import com.total.smartcomp.entity.Employee;
+import com.total.smartcomp.repository.EmployeeRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +20,8 @@ class EmployeeRepositoryTest {
     private EmployeeRepository repository;
 
     @Test
-    void findByName() {
-        final Optional<Employee> employee = repository.findByName("demo-test");
-
+    void findByFirstname() {
+        final Optional<Employee> employee = repository.findByFirstname("demo-test");
         assertFalse(employee.isPresent());
     }
 }

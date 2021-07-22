@@ -9,3 +9,7 @@ spring:
     password: 1SmartCompPwd..
   liquibase:
     change-log: classpath:/db/changelog/db.changelog-master.yaml
+
+input:
+  datas:
+    filePath: 'classpath:/datas/Matrice_Congo.xlsx'
